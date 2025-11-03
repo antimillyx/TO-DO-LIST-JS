@@ -125,7 +125,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* CONTROLES */
 .controls {
   display: flex;
   justify-content: space-between;
@@ -187,7 +186,7 @@ body {
   opacity: 0.5;
 }
 
-/* CATEGORIAS */
+
 .categories {
   display: flex;
   gap: 0.8rem;
@@ -213,7 +212,6 @@ body {
   border-color: var(--primary-color);
 }
 
-/* GRID DE LISTAS */
 .lists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
