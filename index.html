@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desbagunça</title>
+</head>
+<body class="light-theme">
+    
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">Desbagunça</a>
+            <button class="navbar-toggle" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="login.html">Entrar</a></li>
+                <li><a href="listas.html">Listas</a></li>
+                <li><a href="#journal">Journal</a></li>
+                <li><a href="pomodoro.html">Pomodoro</a></li>
+                <li><a href="#games">Games</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="page-title">Tarefas do Dia</h1>
+            <div class="stats">
+                <span class="total-tasks">Total: <span id="taskCount">0</span></span>
+                <span class="completed-tasks">Concluídas: <span id="completedCount">0</span></span>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="input-area">
+                <input type="text" id="taskInput" placeholder="Adicione uma tarefa..." maxlength="100">
+                <button id="addBtn" class="add-button">Adicionar</button>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendentes</button>
+                <button class="filter-btn" data-filter="completed">Concluídas</button>
+            </div>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="taskList" class="task-list"></ul>
+            <div id="emptyState" class="empty-state">
+                <p>Nenhuma tarefa adicionada ainda!</p>
+                <small>Adicione sua primeira tarefa acima 👆</small>
+            </div>
+        </div>
+    </main>
+
+    <button class="theme-toggle" aria-label="Alternar tema">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <script src="script.js"></script>
+    <noscript>Você precisa habilitar o JavaScript para ver o site completo.</noscript>
+</body>
+</html>

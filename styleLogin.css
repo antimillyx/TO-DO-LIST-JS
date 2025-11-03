@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&family=Homemade+Apple&family=Playball&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playball', cursive;
+    background: linear-gradient(135deg, #ff6b9d 0%, #49e46f 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(255, 23, 93, 0.603);
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    font-family: 'Playball', cursive;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ff4081;
+    font-size: 2.2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    color: #420016;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ffb6c8;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    color: #ff6b9d;
+    background-color: #ff4081;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: #01ac01c4;
+    color: #ce0067;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(141, 2, 146, 0.753);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/*deixando responsivo!!!*/
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .login-form h2 {
+        font-size: 1.8rem;
+    }
+}

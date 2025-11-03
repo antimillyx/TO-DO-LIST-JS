@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleListas.css">
+    <title>Minhas Listas | Desbagunça</title>
+</head>
+<body class="light-theme">
+    
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">Desbagunça</a>
+            <button class="navbar-toggle" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="login.html">Entrar</a></li>
+                <li><a href="listas.html" class="active">Listas</a></li>
+                <li><a href="#journal">Journal</a></li>
+                <li><a href="pomodoro.html">Pomodoro</a></li>
+                <li><a href="#games">Games</a></li>
+            </ul>
+        </div>
+    </nav>
+     <a href="index.html" class="back-btn">← Voltar</a>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="page-title">Minhas Listas</h1>
+            <p class="page-subtitle">Organize suas tarefas por categorias</p>
+        </header>
+
+        <div class="controls">
+            <button class="new-list-btn" id="newListBtn">
+                <span>+</span> Nova Lista
+            </button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar listas...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <!-- Modal para criar nova lista -->
+        <div id="listModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Criar Nova Lista</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <form id="listForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="listName">Nome da Lista</label>
+                        <input type="text" id="listName" placeholder="Ex: Compras do Mês" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="listCategory">Categoria</label>
+                        <select id="listCategory" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="compras">🛒 Compras</option>
+                            <option value="tarefas">📋 Tarefas</option>
+                            <option value="trabalho">💼 Trabalho</option>
+                            <option value="estudos">📚 Estudos</option>
+                            <option value="casa">🏠 Casa</option>
+                            <option value="pessoal">👤 Pessoal</option>
+                            <option value="outro">🔖 Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="listColor">Cor da Lista</label>
+                        <div class="color-picker">
+                            <input type="radio" name="listColor" value="#ff6b9d" id="color1" checked>
+                            <label for="color1" class="color-option" style="--color: #ff6b9d"></label>
+                            <input type="radio" name="listColor" value="#6b8cff" id="color2">
+                            <label for="color2" class="color-option" style="--color: #6b8cff"></label>
+                            <input type="radio" name="listColor" value="#6bff91" id="color3">
+                            <label for="color3" class="color-option" style="--color: #6bff91"></label>
+                            <input type="radio" name="listColor" value="#ffd86b" id="color4">
+                            <label for="color4" class="color-option" style="--color: #ffd86b"></label>
+                            <input type="radio" name="listColor" value="#b86bff" id="color5">
+                            <label for="color5" class="color-option" style="--color: #b86bff"></label>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-cancel">Cancelar</button>
+                        <button type="submit" class="btn-create">Criar Lista</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="lists-container">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">Todas</button>
+                <button class="category-btn" data-category="compras">🛒 Compras</button>
+                <button class="category-btn" data-category="tarefas">📋 Tarefas</button>
+                <button class="category-btn" data-category="trabalho">💼 Trabalho</button>
+                <button class="category-btn" data-category="estudos">📚 Estudos</button>
+                <button class="category-btn" data-category="casa">🏠 Casa</button>
+            </div>
+
+            <div class="lists-grid" id="listsGrid">
+            </div>
+
+            <div id="emptyLists" class="empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>Nenhuma lista criada ainda</h3>
+                <p>Crie sua primeira lista para começar a organizar suas tarefas!</p>
+                <button class="btn-empty" id="createFirstList">Criar Primeira Lista</button>
+            </div>
+        </div>
+    </main>
+
+    <button class="theme-toggle" aria-label="Alternar tema">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <script src="scriptListas.js"></script>
+</body>
+</html>

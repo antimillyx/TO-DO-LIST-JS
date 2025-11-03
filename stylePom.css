@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&family=Homemade+Apple&family=Playball&display=swap');
+
+:root {
+  --primary-color: #ff6b9d;
+  --secondary-color: #01ac01c4;
+  --accent-color: #ff4081;
+  --dark-color: #270510;
+  --light-color: #fde8ef;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  
+  --bg-color: var(--light-color);
+  --text-color: var(--secondary-color);
+  --card-bg: #ffffff;
+  --shadow: 0 4px 15px rgba(85, 0, 71, 0.479);
+  
+  --transition: all 0.3s ease;
+}
+
+.dark-theme {
+  --bg-color: var(--dark-color);
+  --text-color: var(--light-color);
+  --card-bg: #690329;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* BARRA DE NAVEGAÇÃO!!! */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 182, 200, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.dark-theme .navbar {
+  background: rgba(39, 5, 16, 0.95);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  max-width: 1600px;
+}
+
+.navbar-logo {
+  font-family: 'Playball', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-menu li a {
+  font-family: 'Segoe UI', sans-serif;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.navbar-menu li a:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+
+.back-btn {
+   position:absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: var(--secondary-color);
+    color: #ce0067;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(141, 2, 146, 0.753);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
